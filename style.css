@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #e8e8e8;
+}
+
+.phone{
+    display: flex;
+    flex-direction: column;
+    width: 18rem;
+    height: 17rem;
+    box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.1);
+    border-radius: 40px;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .8rem 1.8rem;
+    font-size: 80%;
+    opacity: .4;
+}
+
+.time{
+    color: #000;
+}
+
+.icons{
+    display: flex;
+    margin-top: .5rem;
+}
+
+.battery{
+    width: .85rem;
+    height: .45rem;
+    background: #000;
+}
+
+.network{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent transparent #000 transparent;
+    transform: rotate(135deg);
+    border-width: 0 6.8px 7.2px 6.8px;
+    margin: .12rem .5rem;
+}
+
+.content{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    margin: auto;
+    width: 70%;
+    transform: translateY(5%);
+}
+
+.circle{
+    position: relative;
+    width:8rem;
+    height: 8rem;
+    border-radius: 100%;
+    background: linear-gradient(40deg, #ff0080, #ff8c00 70%);
+    margin: auto;
+}
+
+.crescent{
+    position: absolute;
+    right: 0;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 100%;
+    background: #fff;
+    transform: scale(0);
+    transform-origin: top right;
+    transition:transform .6s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+label, .toggle{
+    height: 2.8rem;
+    border-radius: 100px;
+}
+
+label{
+    width: 100%;
+    background: rgba(0, 0, 0, .1);
+    border-radius: 100px;
+    position: relative;
+    margin: 1.8rem 0 4rem 0;
+    cursor: pointer;
+}
+
+.toggle{
+    position: absolute;
+    width: 50%;
+    background: #fff;
+    box-shadow: 0 2px 15px rgba(0,0,0,.15);
+    transition: transform .3s cubic-bezier(0.25, 0.045, 0.94);
+}
+
+.names{
+    color: #000;
+    font-weight: 600;
+    width: 67%;
+    margin-left: 16.5%;
+    position: absolute;
+    top:22%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+}
+
+.light{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dark{
+    opacity:.5;
+}
+
+.mark{
+    border-radius: 100px;
+    background: #000;
+}
+
+[type="checkbox"]{
+    display: none;
+}
+
+[type="checkbox"]:checked + .app .toggle{
+    transform: translateX(100%);
+    background: #34323d;
+}
+
+[type="checkbox"]:checked + .app .dark{
+    opacity: 1;
+    color: #fff;
+}
+
+[type="checkbox"]:checked + .app .light{
+    opacity: 1;
+    color: #fff;
+}
+
+[type="checkbox"]:checked + .app .body{
+    background: #26242e;
+    color: #fff;
+}
+
+[type="checkbox"]:checked + .app .crescent{
+    transform: scale(1);
+    background: #26242e;
+}
+
+[type="checkbox"]:checked + .app .circle{
+    background: linear-gradient(40deg, #8983f7, #a3dafb 70%);
+}
+
+[type="checkbox"]:checked + .lime{
+    color: #fff;
+}
+
+[type="checkbox"]:checked + .app .body .phone .menu .time{
+    color: #fff;
+}
+
+[type="checkbox"]:checked + .app .body .phone .menu .icons .network{
+    border-color: transparent transparent #fff transparent;
+}
+
+[type="checkbox"]:checked + .app .body .phone .menu .icons .battery{
+    background: #fff ;
+}
+
+[type="checkbox"]:checked + .app .body{
+    border-radius: 40px;
+}
